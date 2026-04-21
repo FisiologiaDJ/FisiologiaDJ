@@ -10,7 +10,7 @@ st.info("📚Intrucciones: Elige el ion de tu interés, tienes para elegir entre
 
 ion = st.selectbox("Ion", ["Na⁺", "K⁺", "Cl⁻", "Ca²⁺"])
 conc_out = st.slider("Concentración extracelular (mM)", 1, 200, 145)
-conc_in = st.slider("Concentración intracelular (mM)", 1, 200, 10)
+conc_in = st.slider("Concentración intracelular (mM)", 0.0000001, 200, 10)
 temp_c = st.slider("🌡️ Temperatura (°C)", 20, 40, 37)
 
 T = temp_c + 273.15
