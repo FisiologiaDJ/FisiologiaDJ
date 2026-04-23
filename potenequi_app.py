@@ -14,14 +14,14 @@ if ion == "Ca²⁺":
     st.markdown("### Concentraciones para calcio")
     conc_out = st.number_input(
         "Concentración extracelular (mM)", 
-        value=2.0, 
+        value=5.0, 
         min_value=0.001, 
         step=0.1,
         format="%.3f"
     )
     conc_in_nM = st.number_input(
         "Concentración intracelular (nM)", 
-        value=100.0, 
+        value=500.0, 
         min_value=1.0, 
         step=10.0,
         format="%.1f"
