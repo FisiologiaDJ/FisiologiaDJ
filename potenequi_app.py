@@ -29,8 +29,8 @@ if ion == "Ca²⁺":
     conc_in = conc_in_nM / 1_000_000
 else:
     st.markdown(f"### Concentraciones para {ion} (en mM)")
-    conc_out = st.number_input("Concentración extracelular (mM)", value=130.0, min_value=0.1, format="%.1f")
-    conc_in = st.number_input("Concentración intracelular (mM)", value=20.0, min_value=0.1, format="%.1f")
+    conc_out = st.number_input("Concentración extracelular (mM)", value=130.0, min_value=0.1)
+    conc_in = st.number_input("Concentración intracelular (mM)", value=20.0, min_value=0.1)
 
 temp_c = st.slider("🌡️ Temperatura (°C)", 20, 40, 37)
 
