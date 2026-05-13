@@ -68,7 +68,7 @@ if mode == "Estático (cálculo del potencial de membrana)":
 
     st.info("💡Aquí se muestra el ⚡POTENCIAL DE MEMBRANA obtenido.")
 
-    st.markdown(f'<p style="color:beige; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:red; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
 
     st.info("⚡Ecuación de Goldman-Hodgkin-Katz.⚡")
 
@@ -157,7 +157,7 @@ if mode == "Estático (cálculo del potencial de membrana)":
 
     st.info("💡En esta sección puedes ver la cantidad aproximada de iones que se desplazarían debido a los cambios en la concentración que estableciste al inicio. Se toman como estado inicial los valores establecidos por defecto, así que el ⚡potencial de membrana en reposo de referencia será -74.7 mV.")
 
-    st.markdown(f'<p style="color:beige; font-size:20px;"><b>Del potencial inicial ({V_m_initial:.1f} mV) al actual ({V_m:.1f} mV), se movieron aproximadamente {N_ions_int:,} iones de {ion_movido}."</b></p>', unsafe_allow_html=True)
+    st.markdown(f'<p style="color:red; font-size:20px;"><b>Del potencial inicial ({V_m_initial:.1f} mV) al actual ({V_m:.1f} mV), se movieron aproximadamente {N_ions_int:,} iones de {ion_movido}."</b></p>', unsafe_allow_html=True)
 
 
     st.info("⚖️ Es importante mencionar que en el interior de la célula existen cargas negativas que no pueden salir e incluyen entre otros a proteínas, fosfatos como el ATP y ácidos nucleicos como el ADN, que en conjunto son denominados ANIONES INTRACELULARES NO DIFUSIBLES. En reposo, esta carga negativa esta equilibrada por iones con carga positiva como el potasio (K⁺) y el sodio (Na⁺). Los aniones intracelulares no difusibles son la razón por la que el potasio se mantiene en altas concentraciones en el interior de las células, en condiciones normales el potasio que sale de la célula deja a los aniones intracelulares no difusibles parcialmente descompensados, lo que ocasiona que el interior se vuelva negativo, de esta forma estos participan directamente en el establecimiento del potencial de membrana en reposo.")
