@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 st.set_page_config(page_title="Ecuación de Goldman", page_icon="⚡")
-st.markdown("<h3 style='text-align: center;'>⚡ Calculadora del potencial de membrana ⚡ Ecuación de Goldman-Hodgkin-Katz </h3>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center;'>⚡ Calculadora del Potencial de Membrana ⚡       Ecuación de Goldman-Hodgkin-Katz </h3>", unsafe_allow_html=True)
 
 st.info("💡¿Sabias que la ecuación de Goldman-Hodgkin-Katz es de gran utilidad en fisiología para calcular el potencial de membrana? La ecuación de Goldman-Hodgkin-Katz describe el potencial de membrana en estado estacionario cuando la membrana es permeable a múltiples iones (sodio (Na⁺), potasio (K⁺), cloro (Cl⁻) y calcio (Ca²⁺)). El voltaje obtenido en la ecuación representa un equilibrio dinámico de los potenciales de equilibrio de cada ion, donde el valor está determinado por el promedio ponderado de los potenciales de equilibrio iónico de cada ion (determinaods por los gradientes de concentración) y las respectivas permeabilidades relativas.")
 st.info("📚Instrucciones: 1. Elige la concentración intracelular y extracelular para cada ion. 2. Si deseas obtener el Potencial de membrana selecciona: 🔹Modo estático. Si deseas simular un potencial de acción selecciona: 🔹Modo Dinámico. 3. Elige la temperatura a la que quieres trabajar. 4. Establece las permeabilidades de la membrana celular para cada ion. En la sección de resultados observarás los potenciales de equilibrio para cada ion y el potencial de membrana, estos se actualizan automáticamente.")
