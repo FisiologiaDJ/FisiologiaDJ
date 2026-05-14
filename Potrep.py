@@ -61,17 +61,17 @@ if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
 
     st.subheader("Sección de resultados")
     
-    st.info("💡Aquí se muestran los ⚡POTENCIALES DE EQUILIBRIO IÓNICO de cada ion para las concentraciones elegidas.")
+    st.info("💡Aquí se muestra el ⚡POTENCIAL DE MEMBRANA obtenido.")
+
+    st.markdown(f'<p style="color:red; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
+    
+    st.info("💡Aquí se muestran los ⚡POTENCIALES DE EQUILIBRIO IÓNICO de cada ion para las concentraciones elegidas, recuerda que el potencial de membrana está determinado por el promedio ponderado de los potenciales de equilibrio iónico de cada ion y las respectivas permeabilidades relativas.")
 
     st.markdown(f'<p style="color:green; font-size:18px;"><b>Potencial de equilibrio del ion sodio= {E_Na:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:blue; font-size:18px;"><b>Potencial de equilibrio del ion potasio= {E_K:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:orange; font-size:18px;"><b>Potencial de equilibrio del ion cloro = {E_Cl:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:purple; font-size:18px;"><b>Potencial de equilibrio del ion calcio= {E_Ca:.1f} mV</b></p>', unsafe_allow_html=True)
   
-    st.info("💡Aquí se muestra el ⚡POTENCIAL DE MEMBRANA obtenido.")
-
-    st.markdown(f'<p style="color:red; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
-
     st.info("⚡Aquí puedes recordar la Ecuación de Goldman-Hodgkin-Katz y cada uno de sus parametros.⚡")
 
     st.markdown(r'''
