@@ -65,7 +65,8 @@ if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
     st.markdown(f'<p style="color:orange; font-size:18px;"><b>Potencial de equilibrio del ion cloro = {E_Cl:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:purple; font-size:18px;"><b>Potencial de equilibrio del ion calcio= {E_Ca:.1f} mV</b></p>', unsafe_allow_html=True)
 
-
+    st.subheader("Resultados")
+    
     st.info("💡Aquí se muestra el ⚡POTENCIAL DE MEMBRANA obtenido.")
 
     st.markdown(f'<p style="color:red; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
