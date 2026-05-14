@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Potencial de Membrana", page_icon="⚡")
 st.markdown("<h3 style='text-align: center;'>⚡ Calculadora del Potencial de Membrana ⚡                (Ecuación de Goldman-Hodgkin-Katz) </h3>", unsafe_allow_html=True)
 
-st.info("💡¿Sabias que la ecuación de Goldman-Hodgkin-Katz es de gran utilidad en fisiología para calcular el potencial de membrana? La ecuación de Goldman-Hodgkin-Katz describe el potencial de membrana en estado estacionario cuando la membrana es permeable a múltiples iones (sodio (Na⁺), potasio (K⁺), cloro (Cl⁻) y calcio (Ca²⁺)). El voltaje obtenido en la ecuación representa un equilibrio dinámico de los potenciales de equilibrio de cada ion, donde el valor está determinado por el promedio ponderado de los potenciales de equilibrio iónico de cada ion (determinaods por los gradientes de concentración) y las respectivas permeabilidades relativas.")
-st.info("📚Instrucciones: 1. Elige la concentración intracelular y extracelular para cada ion. 2. Si deseas obtener el Potencial de membrana selecciona: 🔹Modo estático. Si deseas simular un potencial de acción selecciona: 🔹Modo Dinámico. 3. Elige la temperatura a la que quieres trabajar. 4. Establece las permeabilidades de la membrana celular para cada ion. En la sección de resultados observarás los potenciales de equilibrio para cada ion y el potencial de membrana, estos se actualizan automáticamente.")
+st.info("💡¿Sabias que la ecuación de Goldman-Hodgkin-Katz es de gran utilidad en fisiología para calcular el potencial de membrana? La ecuación de Goldman-Hodgkin-Katz describe el potencial de membrana en estado estacionario cuando la membrana es permeable a múltiples iones (sodio (Na⁺), potasio (K⁺), cloro (Cl⁻) y calcio (Ca²⁺)). El voltaje obtenido en la ecuación representa un equilibrio dinámico de los potenciales de equilibrio de cada ion, donde el valor está determinado por el promedio ponderado de los potenciales de equilibrio iónico de cada ion (determinados por los gradientes de concentración) y las respectivas permeabilidades relativas.")
+st.info("📚Instrucciones: 1. Elige la concentración intracelular y extracelular para cada ion. 2. Si deseas obtener el POTENCIAL DE MEMBRANA selecciona: 🔹Modo estático. Si deseas simular un POTENCIAL DE ACCIÓN selecciona: 🔹Modo Dinámico. 3. Elige la temperatura a la que quieres trabajar. 4. Establece las permeabilidades de la membrana celular para cada ion. En la sección de resultados observarás los potenciales de equilibrio para cada ion y el potencial de membrana, estos se actualizan automáticamente.")
 
 
 
@@ -24,14 +24,14 @@ with col2:
     Ca_in = st.number_input("Ca²⁺ dentro", value=0.0001, min_value=0.000001, format="%.6f")
 
 
-mode = st.radio("Modo", ["Estático (cálculo del potencial de membrana)", "Dinámico (simulación del potencial de acción)"], horizontal=True)
+mode = st.radio("Modo", ["Estático (cálculo del POTENCIAL DE MEMBRANA)", "Dinámico (simulación del POTENCIAL DE ACCIÓN)"], horizontal=True)
 st.markdown("---")
 
 
 R = 8.314
 F = 96485
 
-if mode == "Estático (cálculo del potencial de membrana)":
+if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
 
     temp_c = st.slider("🌡️ Temperatura (°C)", 20, 40, 37, key="temp_estatico")
     T = temp_c + 273.15
@@ -155,7 +155,7 @@ if mode == "Estático (cálculo del potencial de membrana)":
     else:
         ion_movido = "Na⁺/K⁺"
 
-    st.info("💡En esta sección puedes ver la cantidad aproximada de iones que se desplazarían debido a los cambios en la concentración que estableciste al inicio. Se toman como estado inicial los valores establecidos por defecto, así que el ⚡potencial de membrana en reposo de referencia será -74.7 mV.")
+    st.info("💡En esta sección puedes ver la cantidad aproximada de iones que se desplazarían debido a los cambios en la concentración que estableciste al inicio. Se toman como estado inicial los valores establecidos por defecto, así que el ⚡potencial de membrana en reposo de referencia será -74.7 mV y solo se consideran a los cationes predominantes: potasio y sodio.")
 
     st.markdown(f'<p style="color:red; font-size:20px;"><b>Del potencial inicial ({V_m_initial:.1f} mV) al actual ({V_m:.1f} mV), se movieron aproximadamente {N_ions_int:,} iones de {ion_movido}."</b></p>', unsafe_allow_html=True)
 
@@ -183,7 +183,7 @@ if mode == "Estático (cálculo del potencial de membrana)":
     st.info("🩺Gracias por visitarnos, puedes emplear esta aplicación gratuitamente y compartirla si así lo deseas. En Fisiología DJ podrás encontrar una gran cantidad de videos e información que te será de utilidad para todos tus cursos. 🙏 Agradecemos infinitamente toda la ayuda brindada por Qwen Studio para el desarrollo e implementación de esta aplicación. Esta aplicación es para fines educativos.")
 
 
-elif mode == "Dinámico (simulación del potencial de acción)":
+elif mode == "Dinámico (simulación del POTENCIAL DE ACCIÓN)":
 
     temp_c = st.slider("🌡️ Temperatura (°C)", 20, 40, 37, key="temp_dinamico")
     T = temp_c + 273.15
@@ -191,7 +191,7 @@ elif mode == "Dinámico (simulación del potencial de acción)":
 
     t_max = st.slider("Duración total de la simulación (ms)", 10, 200, 50)
 
-    st.info("💡Aquí puedes simular un POTENCIAL DE ACCIÓN BÁSICO. Puedes elegir entre diferentes tipos de escenarios y para lograr el potencial de acción deberás elegir: 🔹la temperatura, 🔹el tiempo que quieres que dure tu simulación, 🔹los tipos de iones que emplearás, 🔹el tiempo de inicio, 🔹el cambio en la permeabilidad (de cerrado a abierto), 🔹la duración de este cambio, 🔹el cambio en la permeabilidad (de abierto a cerrado) y la duración de este cambio para cada ion, una vez elegidos estos parámetros presiona el botón INICIAR SIMULACIÓN y se mostrará una simulación básica del potencial de acción. 📚 Aprende, descubre, repasa y práctica. En Fisiología DJ esperamos que esta simulación que hemos preparado para ti sea de tu agrado y que disfrutes intentando obtener un potencial de acción. Esta aplicación es gratuita y para fines educativos, los resultados mostrados son simulaciones aproximadas.")
+    st.info("💡Aquí puedes simular un POTENCIAL DE ACCIÓN BÁSICO. Puedes elegir entre diferentes tipos de escenarios y para lograr el potencial de acción deberás elegir: 🔹la temperatura, 🔹el tiempo que quieres que dure tu simulación, 🔹los tipos de iones que emplearás, 🔹el tiempo de inicio, 🔹el cambio en la permeabilidad (de cerrado a abierto), 🔹la duración de este cambio, 🔹el cambio en la permeabilidad (de abierto a cerrado) y 🔹la duración de este cambio para cada ion. Una vez elegidos estos parámetros presiona el botón INICIAR SIMULACIÓN y se mostrará la simulación básica de tu potencial de acción. 📚 Aprende, descubre, diviértete creando un potencial de acción. En Fisiología DJ esperamos que esta simulación que hemos preparado para ti sea de tu agrado y que disfrutes intentando obtener un potencial de acción. Esta aplicación es gratuita y para fines educativos, los resultados mostrados son simulaciones aproximadas.")
 
     scenario = st.selectbox("Escenario fisiológico", [
         "Permeabilidades de sodio y potasio",
@@ -303,7 +303,7 @@ elif mode == "Dinámico (simulación del potencial de acción)":
         P_Na_close = st.number_input("Cambio en la permeabilidad de sodio/potasio, cierre", 0.04, P_Na_open, 0.04, key="p_na_close_spcal")
         t_Na_close = st.slider("Duración cierre sodio/potasio (ms)", 1, 100, 1, key="t_na_close_spcal")
 
-        st.subheader("Potasio (If")
+        st.subheader("Potasio (If)")
         t_K_if_start = st.slider("Inicio de potasio (ms)", 0, t_max-1, t_Na_start, key="t_k_if_start_spcal")
         P_K_if_open = st.number_input("Cambio en la permeabilidad de potasio, apertura", 0.01, 20.0, 1.0, key="p_k_if_open_spcal")
         t_K_if_open = st.slider("Duración apertura potasio (ms)", 1, 100, 1, key="t_k_if_open_spcal")
