@@ -57,6 +57,8 @@ if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
     num = P_Na*Na_out + P_K*K_out + P_Cl*Cl_in + P_Ca*Ca_out
     den = P_Na*Na_in + P_K*K_in + P_Cl*Cl_out + P_Ca*Ca_in
     V_m = (R * T / F) * np.log(num / den) * 1000
+
+    st.subheader("Sección de resultados")
     
     st.info("💡Aquí se muestran los ⚡POTENCIALES DE EQUILIBRIO IÓNICO de cada ion para las concentraciones elegidas.")
 
@@ -64,9 +66,7 @@ if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
     st.markdown(f'<p style="color:blue; font-size:18px;"><b>Potencial de equilibrio del ion potasio= {E_K:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:orange; font-size:18px;"><b>Potencial de equilibrio del ion cloro = {E_Cl:.1f} mV</b></p>', unsafe_allow_html=True)
     st.markdown(f'<p style="color:purple; font-size:18px;"><b>Potencial de equilibrio del ion calcio= {E_Ca:.1f} mV</b></p>', unsafe_allow_html=True)
-
-    st.subheader("Resultados")
-    
+  
     st.info("💡Aquí se muestra el ⚡POTENCIAL DE MEMBRANA obtenido.")
 
     st.markdown(f'<p style="color:red; font-size:30px;"><b>Potencial de membrana: {V_m:.1f} mV</b></p>', unsafe_allow_html=True)
