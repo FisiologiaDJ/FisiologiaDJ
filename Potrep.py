@@ -23,6 +23,7 @@ with col2:
     Cl_in = st.number_input("Cl⁻ dentro", value=4.0, min_value=0.1)
     Ca_in = st.number_input("Ca²⁺ dentro", value=0.0001, min_value=0.000001, format="%.6f")
 
+st.subheader("Selecciona el modo con el que quieres trabajar")
 
 mode = st.radio("Modo", ["Estático (cálculo del POTENCIAL DE MEMBRANA)", "Dinámico (simulación del POTENCIAL DE ACCIÓN)"], horizontal=True)
 st.markdown("---")
