@@ -98,7 +98,7 @@ if mode == "Estático (cálculo del POTENCIAL DE MEMBRANA)":
     ''')
 
     st.info("💡En esta gráfica de barras puedes observar la contribución de las concentraciones iónicas que elevan el voltaje (numerador) y la de las concentraciones iónicas que disminuyen el voltaje (denominador).⚡")
-    # Gráfico de barras
+
     num_contrib = [P_Na*Na_out, P_K*K_out, P_Cl*Cl_in, P_Ca*Ca_out]
     den_contrib = [P_Na*Na_in, P_K*K_in, P_Cl*Cl_out, P_Ca*Ca_in]
     ions = ['Na⁺', 'K⁺', 'Cl⁻', 'Ca²⁺']
@@ -193,7 +193,7 @@ elif mode == "Dinámico (simulación del POTENCIAL DE ACCIÓN)":
 
     t_max = st.slider("Duración total de la simulación (ms)", 10, 200, 50)
 
-    st.info("💡Aquí puedes simular un POTENCIAL DE ACCIÓN BÁSICO. Puedes elegir entre diferentes tipos de escenarios y para lograr el potencial de acción deberás elegir: 🔹la temperatura, 🔹el tiempo que quieres que dure tu simulación, 🔹los tipos de iones que emplearás, 🔹el tiempo de inicio, 🔹el cambio en la permeabilidad (de cerrado a abierto), 🔹la duración de este cambio, 🔹el cambio en la permeabilidad (de abierto a cerrado) y 🔹la duración de este cambio para cada ion. Una vez elegidos estos parámetros presiona el botón INICIAR SIMULACIÓN y se mostrará la simulación básica de tu potencial de acción. 📚 Aprende, descubre, diviértete creando un potencial de acción. En Fisiología DJ esperamos que esta simulación que hemos preparado para ti sea de tu agrado y que disfrutes intentando obtener un potencial de acción. Esta aplicación es gratuita y para fines educativos, los resultados mostrados son simulaciones aproximadas.")
+    st.info("💡Aquí puedes simular un POTENCIAL DE ACCIÓN BÁSICO. Puedes elegir entre diferentes tipos de escenarios considerando diferentes iones, para lograr tu potencial de acción deberás elegir: 🔹la temperatura, 🔹el tiempo que quieres que dure tu simulación, 🔹los tipos de iones que emplearás, 🔹el tiempo de inicio, 🔹el cambio en la permeabilidad (de cerrado a abierto), 🔹la duración de este cambio, 🔹el cambio en la permeabilidad (de abierto a cerrado) y 🔹la duración de este cambio para cada ion. Una vez elegidos estos parámetros presiona el botón INICIAR SIMULACIÓN y se mostrará la simulación básica de tu potencial de acción. 📚 Aprende, descubre, diviértete creando un potencial de acción. En Fisiología DJ esperamos que esta simulación que hemos preparado para ti sea de tu agrado y que disfrutes intentando obtener un potencial de acción. Esta aplicación es gratuita y para fines educativos, los resultados mostrados son simulaciones aproximadas.")
 
     scenario = st.selectbox("Escenario fisiológico", [
         "Permeabilidades de sodio y potasio",
