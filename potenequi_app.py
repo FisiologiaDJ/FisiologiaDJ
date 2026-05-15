@@ -5,9 +5,17 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Potencial de equilibrio iónico", page_icon="⚡")
 st.markdown("<h3 style='text-align: center;'>⚡Calculadora del potencial de equilibrio iónico⚡      (Ecuación de Nernst)</h3>", unsafe_allow_html=True)
 
-st.info("💡¿Sabias que la ecuación de Nernst es de gran utilidad en fisiología para calcular el potencial de equilibrio iónico? Este valor representa la energía eléctrica que compensa a la energía química, esto nos ayuda a entender mejor el potencial de membrana en reposo y el potencial de acción. ⚡Cuando se alcanza el voltaje del potencial de equilibrio iónico el flujo neto del ion es cero.")
-st.info("📚Instrucciones: Elige el ion de tu interés, puedes elegir entre los iones sodio, potasio, cloro y calcio. Después elige la concentración extra e intracelular, así como la temperatura de tu preferencia desplazando las barras hasta obtener el valor deseado. 🤩Observa cómo se actualiza el potencial de equilibrio iónico resultante en la gráfica y en valor numérico en milivolts (mV). Dejamos para ti la ecuación de Nernst al final.")
-
+with st.expander("💡¿Qué tanto sabes de la Ecuación de Nernst?"):
+    st.markdown("""
+    ¿Sabias que la ecuación de Nernst es de gran utilidad en fisiología para calcular el potencial de equilibrio iónico? Este valor representa la energía eléctrica que compensa a la energía química, esto nos ayuda a entender mejor el potencial de membrana en reposo y el potencial de acción. ⚡Cuando se alcanza el voltaje del potencial de equilibrio iónico el flujo neto del ion es cero.  
+    """)
+with st.expander("📖 Instrucciones:"):
+    st.markdown("""
+    1. Elige el ion de tu interés, puedes elegir entre los iones sodio, potasio, cloro y calcio. 
+    2. Establece la concentración extra e intracelular. 
+    3. Elige la temperatura de tu preferencia desplazando las barras hasta obtener el valor deseado. 
+    4. 🤩Observa cómo se actualiza el potencial de equilibrio iónico resultante en la gráfica y en valor numérico en milivolts (mV). Dejamos para ti la ecuación de Nernst al final para que puedas repasarla.
+    """)
 
 ion = st.selectbox("Ion", ["Na⁺", "K⁺", "Cl⁻", "Ca²⁺"])
 
